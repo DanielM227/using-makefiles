@@ -1,17 +1,4 @@
-## Assignment: **Float Arithmetic Functions and a Makefile**
-
-You’ll write a tiny arithmetic library using floats, then use it in a program.
-Finally, you’ll build a simple Makefile to compile everything.
-
-### Learning Goals
-
-* Write simple `float` functions
-* Use function prototypes in a header
-* Compile/link multiple `.c` files
-* Create and use a basic Makefile
-
-
-## 1. Setup
+## Assignment: **Float Arithmetic Functions and a Makefile**AC
 
 Open this repository in **GitHub Codespaces**.
 
@@ -82,120 +69,121 @@ float divide(float a, float b);
 
 float add(float a, float b) {
     // TODO
-}
-
-float subtract(float a, float b) {
-    // TODO
-}
-
-float multiply(float a, float b) {
-    // TODO
-}
-
-float divide(float a, float b) {
-    // TODO
-    // if b == 0 return 0.0f
-}
-```
-
-### `main.c` (already complete)
-
-```c
-#include <stdio.h>
-#include "arith_utils.h"
-
-int main(void) {
-    float x, y;
-
-    // TODO: prompt user for two floats
-    printf("Enter first number: ");
-    scanf("%f", &x);
-
-    printf("Enter second number: ");
-    scanf("%f", &y);
-
-    printf("\nResults:\n");
-    printf("%.2f + %.2f = %.2f\n", x, y, add(x, y));
-    printf("%.2f - %.2f = %.2f\n", x, y, subtract(x, y));
-    printf("%.2f * %.2f = %.2f\n", x, y, multiply(x, y));
-
-    if (y == 0.0f) {
-        printf("%.2f / %.2f = undefined (division by zero)\n", x, y);
-    } else {
-        printf("%.2f / %.2f = %.2f\n", x, y, divide(x, y));
     }
 
-    return 0;
-}
-```
+    float subtract(float a, float b) {
+        // TODO
+        }
 
----
+        float multiply(float a, float b) {
+            // TODO
+            }
 
-## 4. Manual Compilation (for testing)
+            float divide(float a, float b) {
+                // TODO
+                    // if b == 0 return 0.0f
+                    }
+                    ```
 
-Until your Makefile is done, compile like this:
+                    ### `main.c` (already complete)
 
-```bash
-gcc -Wall -Wextra -pedantic main.c arith_utils.c -o my_program
-```
+                    ```c
+                    #include <stdio.h>
+                    #include "arith_utils.h"
 
-Run:
+                    int main(void) {
+                        float x, y;
 
-```bash
-./my_program
-```
+                            // TODO: prompt user for two floats
+                                printf("Enter first number: ");
+                                    scanf("%f", &x);
 
----
+                                        printf("Enter second number: ");
+                                            scanf("%f", &y);
 
-## 5. **Makefile (Required Final Step)**
+                                                printf("\nResults:\n");
+                                                    printf("%.2f + %.2f = %.2f\n", x, y, add(x, y));
+                                                        printf("%.2f - %.2f = %.2f\n", x, y, subtract(x, y));
+                                                            printf("%.2f * %.2f = %.2f\n", x, y, multiply(x, y));
 
-Create a file named `Makefile` in the root of the repo.
+                                                                if (y == 0.0f) {
+                                                                        printf("%.2f / %.2f = undefined (division by zero)\n", x, y);
+                                                                            } else {
+                                                                                    printf("%.2f / %.2f = %.2f\n", x, y, divide(x, y));
+                                                                                        }
 
-Your Makefile must support:
+                                                                                            return 0;
+                                                                                            }
+                                                                                            ```
 
-1. `make` → builds the program
-2. `make run` → builds (if needed) and runs
-3. `make clean` → removes the executable
+                                                                                            ---
 
-### Makefile Template 
+                                                                                            ## 4. Manual Compilation (for testing)
 
-Please complete the my_program rule (all of the other rules are complete!
+                                                                                            Until your Makefile is done, compile like this:
 
-```make
-CFLAGS = -Wall -Wextra -pedantic
+                                                                                            ```bash
+                                                                                            gcc -Wall -Wextra -pedantic main.c arith_utils.c -o my_program
+                                                                                            ```
 
-all: my_program
+                                                                                            Run:
 
-# COMPLETE THIS RULE: Add dependencies and complete the compilation command
-my_program:
-	gcc $(CFLAGS) 
+                                                                                            ```bash
+                                                                                            ./my_program
+                                                                                            ```
 
-run: all
-	./my_program
+                                                                                            ---
 
-clean:
-	rm -f my_program
-```
+                                                                                            ## 5. **Makefile (Required Final Step)**
 
-Test it:
+                                                                                            Create a file named `Makefile` in the root of the repo.
 
-```bash
-make
-make run
-make clean
-```
+                                                                                            Your Makefile must support:
 
----
+                                                                                            1. `make` → builds the program
+                                                                                            2. `make run` → builds (if needed) and runs
+                                                                                            3. `make clean` → removes the executable
 
-## 6. Submission 
+                                                                                            ### Makefile Template 
 
-1. Open **Source Control** in the editor (third icon from the top)
-2. Stage:
+                                                                                            Please complete the my_program rule (all of the other rules are complete!
 
-   * `main.c`
-   * `arith_utils.c`
-   * `Makefile`
-3. Commit message:
-   `Completed float arithmetic library + Makefile`
-4. Sync / Push
-5. Submit repo URL on Blackboard
+                                                                                            ```make
+                                                                                            CFLAGS = -Wall -Wextra -pedantic
+
+                                                                                            all: my_program
+
+                                                                                            # COMPLETE THIS RULE: Add dependencies and complete the compilation command
+                                                                                            my_program:
+                                                                                            	gcc $(CFLAGS) 
+
+                                                                                                run: all
+                                                                                                	./my_program
+
+                                                                                                    clean:
+                                                                                                    	rm -f my_program
+                                                                                                        ```
+
+                                                                                                        Test it:
+
+                                                                                                        ```bash
+                                                                                                        make
+                                                                                                        make run
+                                                                                                        make clean
+                                                                                                        ```
+
+                                                                                                        ---
+
+                                                                                                        ## 6. Submission 
+
+                                                                                                        1. Open **Source Control** in the editor (third icon from the top)
+                                                                                                        2. Stage:
+
+                                                                                                           * `main.c`
+                                                                                                              * `arith_utils.c`
+                                                                                                                 * `Makefile`
+                                                                                                                 3. Commit message:
+                                                                                                                    `Completed float arithmetic library + Makefile`
+                                                                                                                    4. Sync / Push
+                                                                                                                    5. Submit repo URL on Blackboard
+                                                                                                                    
